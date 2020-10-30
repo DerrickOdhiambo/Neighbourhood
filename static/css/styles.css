@@ -1,3 +1,41 @@
-h1 {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Modak&family=Satisfy&display=swap');
+
+body {
+  background: #50697d;
+  font-family: 'Balsamiq Sans', cursive;
+}
+.main {
+  background: url('/static/images/im2.jpg');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navbar {
+  background-color: #01acbd;
+}
+.landing-page {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  background: #ffff;
+  top: 30%;
+  left: 30%;
+  margin: auto;
+  padding: 1rem;
+}
+.logo h1 {
+  font-family: 'Modak', cursive;
+  color: #50697d;
+}
+.logo h3 {
+  color: #aee0dd;
+}
+.logo h5 {
+  font-family: 'Satisfy', cursive;
 }
