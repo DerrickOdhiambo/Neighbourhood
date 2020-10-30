@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Modak&family=Satisfy&display=swap');
 
 body {
-  background: #50697d;
+  /* background: #50697d; */
   font-family: 'Balsamiq Sans', cursive;
 }
 .main {
@@ -38,4 +38,7 @@ body {
 }
 .logo h5 {
   font-family: 'Satisfy', cursive;
+}
+.authenticate {
+  margin-top: 70px;
 }
