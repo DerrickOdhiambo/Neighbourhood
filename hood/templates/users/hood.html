@@ -1,0 +1,19 @@
+{% extends 'hood/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% for hood in hoods %}
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{ hood.hood_name }}</h3>
+          <p>{{ hood.location }}</p>
+          <p><small>{{ hood.occupants_count }}</small></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
