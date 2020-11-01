@@ -13,18 +13,6 @@ class Neighborhood(models.Model):
         return self.hood_name
 
 
-class Occupant(models.Model):
-    name = models.CharField(max_length=30, null=True)
-    id_number = models.IntegerField(null=True)
-    neighborhood = models.ForeignKey(
-        Neighborhood, null=True, on_delete=models.CASCADE, blank=True)
-    email = models.EmailField(null=True, blank=True)
-    date_created = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return self.name
-
-
 class Tag(models.Model):
     name = models.CharField(max_length=30, null=True)
 
