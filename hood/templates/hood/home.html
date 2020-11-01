@@ -14,7 +14,7 @@
         <div class="card-body">
           <h4 class="card-title">{{ post.title }}</h4>
           <p>{{ post.content }}</p>
-          <p><small class="text-muted">Posted at {{ post.date_posted }}</small></p>
+          <p><small class="text-muted">Posted on {{ post.date_posted }} by {{ post.user.username }}</small></p>
         </div>
       </div>
       {% endfor %}
