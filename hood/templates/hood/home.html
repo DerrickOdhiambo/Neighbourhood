@@ -2,6 +2,35 @@
 
 {% block content %}
 <div class="container">
+  <div class="card-display text-center d-flex">
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">Neighborhoods</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ total_neighborhoods }}</h5>
+      </div>
+      <div class="card-footer">
+        <a href="{% url 'create_hood' %}" class="btn btn-sm btn-light">add neighbourhood</a>
+      </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">Occupants</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ total_occupants }}</h5>
+      </div>
+      <div class="card-footer">
+        <a href="" class="btn btn-sm btn-light">add occupant</a>
+      </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">Businesses</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ total_businesses }}</h5>
+      </div>
+      <div class="card-footer">
+        <a href="" class="btn btn-sm btn-light">add business</a>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-7">
       <div class="card">
@@ -15,6 +44,21 @@
           <h4 class="card-title">{{ post.title }}</h4>
           <p>{{ post.content }}</p>
           <p><small class="text-muted">Posted on {{ post.date_posted }} by {{ post.user.username }}</small></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Businesses</h4>
+        </div>
+      </div>
+      {% for biz in businesses %}
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ biz.business_name }}</h5>
+          <p><small class="text-muted">{{ biz.neighborhood }}</small></p>
         </div>
       </div>
       {% endfor %}
