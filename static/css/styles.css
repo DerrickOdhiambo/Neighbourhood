@@ -6,8 +6,8 @@ body {
   color: #030923;
 }
 .main {
-  background: url('/static/images/im2.jpg');
-  height: 100vh;
+  background: url('/static/images/im4.jpg');
+  height: 90vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
 
 .landing-page {
   background: rgba(0, 0, 0, 0.4);
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   position: relative;
 }
@@ -75,4 +75,7 @@ body {
 }
 .nvabar-brand {
   color: #030923;
+}
+.join a {
+  background-color: #e29e93;
 }

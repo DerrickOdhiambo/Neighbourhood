@@ -42,8 +42,10 @@
 |Behavior|Input|Output|
 |--------|-----|------|
 |User login|Clicks on the login button|Login form for an authenticated user|
-|Register|Clicks on the register button|Reguster form for new users|
+|Register|Clicks on the register button|Register form for new users|
 |Incorrect data input||Flash message indicating the errors|
+|Add a neigborhood|Click on the neighbourhood link|A form with the input fields for adding a neighborhood|
+|Add a business|Click on the business link|A form with the input fields for adding a business|
 
 ## Technologies Used
 
