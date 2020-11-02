@@ -1,0 +1,41 @@
+{% extends 'hood/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Businesses</h3>
+      <form action="{% url 'search-business' %}" method="GET">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="q" placeholder="Search Business...">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-body">
+          {% if object_list %}
+          <h4>Search Results for "<i>{{query}}"</i></h4>
+          {% else %}
+          <h4>No Search Results for<i> "{{query}}"</i></h4>
+          {% endif %}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          {% if object_list %}
+          <h2>Businesses</h2>
+          {% for i in object_list %}
+          <div class="div">
+            <p><a href="">{{ i }}</a></p>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

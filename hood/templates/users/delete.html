@@ -1,0 +1,12 @@
+{% extends 'hood/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Are you sure you want to delete the {{ item }}?</h2>
+  <form action="{% url 'delete_hood' item.id%}" method="post">
+    {% csrf_token %}
+    <a href="{% url 'homepage' %}" class="btn btn-sm btn-info">Cancel</a>
+    <input type="submit" value="Confirm" class="btn btn-sm btn-danger">
+  </form>
+</div>
+{% endblock content %}
