@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'hood.apps.HoodConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
