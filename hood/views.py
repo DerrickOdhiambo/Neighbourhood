@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Post, Neighborhood, Business
 from .forms import CreateNeighborhoodForm
+from django.contrib.auth.decorators import login_required
+from .decorators import allowed_users
 
 
 def index(request):
     return render(request, 'hood/index.html')
 
 
+@login_required
 def home(request):
     return render(request, 'hood/home.html')
 
@@ -40,11 +43,14 @@ class PostCreateView(CreateView):
         return super().form_valid(form)
 
 
+@login_required
+@allowed_users(allowed_roles=['admin'])
 def display_hood(request):
     neighborhoods = Neighborhood.objects.all()
     return render(request, 'users/hood.html', {'hoods': neighborhoods})
 
 
+@login_required
 def create_hood(request):
     form = CreateNeighborhoodForm()
     if request.method == 'POST':
@@ -57,6 +63,8 @@ def create_hood(request):
     return render(request, 'users/create_hood.html', context)
 
 
+@login_required
+@allowed_users(allowed_roles=['admin'])
 def update_hood(request, pk):
     hood = Neighborhood.objects.get(id=pk)
     form = CreateNeighborhoodForm(instance=hood)
@@ -69,6 +77,8 @@ def update_hood(request, pk):
     return render(request, 'users/create_hood.html', context)
 
 
+@login_required
+@allowed_users(allowed_roles=['admin'])
 def delete_hood(request, pk):
     hood = Neighborhood.objects.get(id=pk)
     if request.method == 'POST':
@@ -78,6 +88,8 @@ def delete_hood(request, pk):
     return render(request, 'users/delete.html', context)
 
 
+@login_required
+@allowed_users(allowed_roles=['admin', 'users'])
 def search(request):
     return render(request, 'users/search.html')
 
