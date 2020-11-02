@@ -9,7 +9,8 @@
         <div class="card-body">
           <h3 class="card-title">{{ hood.hood_name }}</h3>
           <p>{{ hood.location }}</p>
-          <p><small>{{ hood.occupants_count }}</small></p>
+          <a href="{% url 'update_hood' hood.id%}" class="btn btn-sm btn-info">update</a>
+          <a href="{% url 'delete_hood' hood.id%}" class="btn btn-sm btn-danger">delete</a>
         </div>
       </div>
     </div>
