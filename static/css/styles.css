@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Modak&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Modak&family=Parisienne&display=swap');
 
 body {
-  /* background: #50697d; */
+  background: #e5edf8;
   font-family: 'Balsamiq Sans', cursive;
+  color: #030923;
 }
 .main {
   background: url('/static/images/im2.jpg');
@@ -13,7 +14,7 @@ body {
   background-position: center;
 }
 .navbar {
-  background-color: #01acbd;
+  background-color: #e29e93;
 }
 
 .landing-page {
@@ -24,21 +25,22 @@ body {
 }
 .logo {
   position: absolute;
-  background: #ffff;
+  background: rgba(0, 0, 0, 0.4);
   top: 30%;
-  left: 30%;
+  left: 28%;
   margin: auto;
   padding: 1rem;
 }
 .logo h1 {
   font-family: 'Modak', cursive;
-  color: #50697d;
+  color: #e29e93;
 }
 .logo h3 {
-  color: #aee0dd;
+  color: whitesmoke;
 }
 .logo h5 {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Parisienne', cursive;
+  color: whitesmoke;
 }
 .authenticate {
   width: 60%;
@@ -58,8 +60,19 @@ body {
   margin-top: 10px;
 }
 .card {
-  margin: 10px;
+  margin: 15px;
+  box-shadow: -1px 2px 23px -4px rgba(0,0,0,0.75);
+  background-color: #edbc7a;
 }
 .card-display {
   justify-content: space-around;
+}
+.card-top {
+  background-color: #0384bd;
+}
+.card-body h3 {
+  color: #02597e;
+}
+.nvabar-brand {
+  color: #030923;
 }

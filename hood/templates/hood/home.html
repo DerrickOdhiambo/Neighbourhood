@@ -5,24 +5,24 @@
   {% if request.user.is_staff %}
   <div class="row">
     <div class="col-md-6">
-      <div class="card text-white bg-info mb-3">
+      <div class="card text-white card-top mb-3">
         <div class="card-header">Neighborhoods</div>
         <div class="card-body">
           <h5 class="card-title">{{ total_neighborhoods }}</h5>
         </div>
         <div class="card-footer">
-          <a href="{% url 'create_hood' %}" class="btn btn-sm btn-light">add neighbourhood</a>
+          <a href="{% url 'create_hood' %}" class="btn btn-md btn-light">add neighbourhood</a>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card text-white bg-info mb-3">
+      <div class="card text-white card-top mb-3">
         <div class="card-header">Businesses</div>
         <div class="card-body">
           <h5 class="card-title">{{ total_businesses }}</h5>
         </div>
         <div class="card-footer">
-          <a href="{% url 'create_business' %}" class="btn btn-sm btn-light">add business</a>
+          <a href="{% url 'create_business' %}" class="btn btn-md btn-light">add business</a>
         </div>
       </div>
     </div>
