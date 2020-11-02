@@ -7,7 +7,7 @@ body {
 }
 .main {
   background: url('/static/images/im4.jpg');
-  height: 92vh;
+  height: 91vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
 
 .landing-page {
   background: rgba(0, 0, 0, 0.4);
-  height: 92vh;
+  height: 91vh;
   width: 100%;
   position: relative;
 }

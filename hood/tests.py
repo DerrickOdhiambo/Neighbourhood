@@ -60,4 +60,4 @@ class TestBusiness(TestCase):
     # Test Find Biz
     def test_find_business_method(self):
         biz = Business.search_biz_by_title(self.new_biz.id)
-        self.assertEqual(biz.id, (self.new_biz.id))
+        self.assertEqual(biz.id, type([self.new_biz.id]))
