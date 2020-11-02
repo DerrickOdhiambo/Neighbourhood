@@ -2,6 +2,9 @@
 
 - An application for reporting all the activities that go on in a neighborhood.
 
+## Author
+- Derrick Odhiambo
+
 ## User Stories
 
 - Sign in with the application to start using.
