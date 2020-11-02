@@ -9,6 +9,7 @@ urlpatterns = [
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('neighborhood/', views.display_hood, name='neighborhood'),
+    path('contacts/', views.contact_page, name='contact'),
     path('search/', views.search, name='search'),
     path('search/search_business/',
          SearchListView.as_view(), name='search-business'),

@@ -118,3 +118,7 @@ class SearchListView(ListView):
         query = self.request.GET.get('q')
         object_list = Business.objects.filter(business_name__icontains=query)
         return object_list
+
+
+def contact_page(request):
+    return render(request, 'hood/contact.html')
