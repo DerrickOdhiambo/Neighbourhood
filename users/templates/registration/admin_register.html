@@ -1,0 +1,18 @@
+{% extends 'hood/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="authenticate">
+  <h3>Admin Register</h3>
+  <div class="form-group">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn btn-sm" type="submit">Register</button>
+    </form>
+  </div>
+  <div>
+    <small class="text-muted">Already have an account? <a href="{% url 'login' %}">Log In</a></small>
+  </div>
+</div>
+{% endblock content %}
