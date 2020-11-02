@@ -47,10 +47,54 @@ def display_hood(request):
 
 def create_hood(request):
     form = CreateNeighborhoodForm()
-    if request == 'POST':
+    if request.method == 'POST':
+        form = CreateNeighborhoodForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('users/hood.html')
+            return redirect('neighborhood')
 
     context = {'form': form}
     return render(request, 'users/create_hood.html', context)
+
+
+def update_hood(request, pk):
+    hood = Neighborhood.objects.get(id=pk)
+    form = CreateNeighborhoodForm(instance=hood)
+    if request.method == 'POST':
+        form = CreateNeighborhoodForm(request.POST, instance=hood)
+        if form.is_valid():
+            form.save()
+            return redirect('neighborhood')
+    context = {'form': form}
+    return render(request, 'users/create_hood.html', context)
+
+
+def delete_hood(request, pk):
+    hood = Neighborhood.objects.get(id=pk)
+    if request.method == 'POST':
+        hood.delete()
+        return redirect('neighborhood')
+    context = {'item': hood}
+    return render(request, 'users/delete.html', context)
+
+
+def search(request):
+    return render(request, 'users/search.html')
+
+
+class SearchListView(ListView):
+    model = Business
+    template_name = 'users/search.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('q')
+        context['query'] = self.request.GET.get('q')
+        context['business'] = Business.objects.filter(
+            business_name__icontains=query)
+        return context
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Business.objects.filter(business_name__icontains=query)
+        return object_list
