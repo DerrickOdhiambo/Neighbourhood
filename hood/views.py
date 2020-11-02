@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Post, Neighborhood, Business
-from .forms import CreateNeighborhoodForm
+from .forms import CreateNeighborhoodForm, CreateBusinessForm
 from django.contrib.auth.decorators import login_required
-from .decorators import allowed_users
 
 
 def index(request):
@@ -44,7 +43,6 @@ class PostCreateView(CreateView):
 
 
 @login_required
-@allowed_users(allowed_roles=['admin'])
 def display_hood(request):
     neighborhoods = Neighborhood.objects.all()
     return render(request, 'users/hood.html', {'hoods': neighborhoods})
@@ -64,7 +62,6 @@ def create_hood(request):
 
 
 @login_required
-@allowed_users(allowed_roles=['admin'])
 def update_hood(request, pk):
     hood = Neighborhood.objects.get(id=pk)
     form = CreateNeighborhoodForm(instance=hood)
@@ -78,7 +75,6 @@ def update_hood(request, pk):
 
 
 @login_required
-@allowed_users(allowed_roles=['admin'])
 def delete_hood(request, pk):
     hood = Neighborhood.objects.get(id=pk)
     if request.method == 'POST':
@@ -89,7 +85,19 @@ def delete_hood(request, pk):
 
 
 @login_required
-@allowed_users(allowed_roles=['admin', 'users'])
+def create_business(request):
+    form = CreateBusinessForm()
+    if request.method == 'POST':
+        form = CreateBusinessForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('search')
+
+    context = {'form': form}
+    return render(request, 'users/create_business.html', context)
+
+
+@login_required
 def search(request):
     return render(request, 'users/search.html')
 

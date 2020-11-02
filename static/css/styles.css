@@ -15,9 +15,7 @@ body {
 .navbar {
   background-color: #01acbd;
 }
-nav {
-  margin-bottom: 80px;
-}
+
 .landing-page {
   background: rgba(0, 0, 0, 0.4);
   height: 100vh;
@@ -43,7 +41,9 @@ nav {
   font-family: 'Satisfy', cursive;
 }
 .authenticate {
-  margin-top: 70px;
+  width: 60%;
+  margin: auto;
+  box-shadow: -1px 2px 23px -4px rgba(0,0,0,0.75);
 }
 .profile-section {
   margin-top: 80px;
@@ -55,7 +55,7 @@ nav {
   margin-bottom: 16px;
 }
 .container {
-  margin-top: 80px;
+  margin-top: 10px;
 }
 .card {
   margin: 10px;

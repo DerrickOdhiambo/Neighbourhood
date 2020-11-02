@@ -12,6 +12,7 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('search/search_business/',
          SearchListView.as_view(), name='search-business'),
+    path('create_business/', views.create_business, name='create_business'),
     path('create/', views.create_hood, name='create_hood'),
     path('update/<int:pk>', views.update_hood, name='update_hood'),
     path('delete/<int:pk>', views.delete_hood, name='delete_hood'),

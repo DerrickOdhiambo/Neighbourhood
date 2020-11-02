@@ -1,0 +1,14 @@
+{% extends 'hood/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <h2>Create Neighbourhood</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <input type="submit" name="Create" class="btn btn-lg">
+  </form>
+</div>
+{% endblock content %}
